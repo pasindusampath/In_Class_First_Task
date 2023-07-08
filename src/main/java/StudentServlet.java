@@ -13,8 +13,10 @@ public class StudentServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/inclass_test","root","1234");
+            Class.forName(getServletContext().getInitParameter("mysql-driver"));
+            con = DriverManager.getConnection(getServletContext().getInitParameter("mysql-url"),
+                    getServletContext().getInitParameter("user-name"),
+                    getServletContext().getInitParameter("password"));
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

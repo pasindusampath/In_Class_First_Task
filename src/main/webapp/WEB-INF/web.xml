@@ -4,6 +4,22 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>user-name</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>1234</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mysql-url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/inclass_test</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mysql-driver</param-name>
+    <param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
   <servlet>
     <servlet-name>student</servlet-name>
     <servlet-class>StudentServlet</servlet-class>
